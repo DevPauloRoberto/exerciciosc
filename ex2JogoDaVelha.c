@@ -5,24 +5,6 @@ int position;
 int win = 1;
 int resultado;
 
-void jogadax(){
-   for (int i = 0; i < 9; i++) {
-    if (position == (i + 1)) {
-        jogoDaVelha[i] = 'x';
-        break;
-    }
-    } 
-}
-
-void jogadao(){
-    for (int i = 0; i < 9; i++) {
-        if (position == (i + 1)) {
-            jogoDaVelha[i] = 'o';
-            break;
-        }
-    } 
-}
-
 void ganhoux(){
     if( jogoDaVelha[0] == 'x' && jogoDaVelha[1] == 'x' && jogoDaVelha[2] == 'x' ||
         jogoDaVelha[3] == 'x' && jogoDaVelha[4] == 'x' && jogoDaVelha[5] == 'x' ||
@@ -53,18 +35,22 @@ void ganhouo(){
     }
 }
 
-int main() {
-    inicio_jogo:
-
+void empate(){
     if (jogoDaVelha[0] != ' ' && jogoDaVelha[1] != ' ' && jogoDaVelha[2] != ' ' &&
         jogoDaVelha[3] != ' ' && jogoDaVelha[4] != ' ' && jogoDaVelha[5] != ' ' &&
         jogoDaVelha[6] != ' ' && jogoDaVelha[7] != ' ' && jogoDaVelha[8] != ' ') {
         printf("Empate\n");
         return 0;
     }
+}
+
+int main() {
+
+    inicio_jogo:
 
     // jogada x
     jogador_x:
+
     printf(" %c|%c|%c\n-------\n %c|%c|%c\n-------\n %c|%c|%c\n\nselecione a posicao que voce quer jogar", 
            jogoDaVelha[0], jogoDaVelha[1], jogoDaVelha[2], 
            jogoDaVelha[3], jogoDaVelha[4], jogoDaVelha[5], 
@@ -84,12 +70,15 @@ int main() {
         goto jogador_x;
     }
 
-    jogadax();
+    jogoDaVelha[position -1] = 'x';
     ganhoux();
+    empate();
 
     if (win == 2) {
         return 0;
     }
+
+    //fim jogada x
 
     // jogada o
     jogador_o:
@@ -112,8 +101,9 @@ int main() {
         goto jogador_o;
     }
 
-    jogadao();
+    jogoDaVelha[position -1] = 'o';
     ganhouo();
+    empate();
 
     if (win == 2) {
         return 0;

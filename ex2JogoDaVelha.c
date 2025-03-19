@@ -23,14 +23,6 @@ void jogadao(){
     } 
 }
 
-int posicaoDisponivel(int posicao) {
-    if (jogoDaVelha[posicao - 1] == ' ') {
-        return 1; // Posição disponível
-    } else {
-        return 0; // Posição ocupada
-    }
-}
-
 void ganhoux(){
     if( jogoDaVelha[0] == 'x' && jogoDaVelha[1] == 'x' && jogoDaVelha[2] == 'x' ||
         jogoDaVelha[3] == 'x' && jogoDaVelha[4] == 'x' && jogoDaVelha[5] == 'x' ||
@@ -82,13 +74,13 @@ int main() {
         if (position > 9 || position <= 0) {
             printf("Somente valores 1 a 9\n");
             goto jogador_x;
-        } else if (jogoDaVelha[position - 1] != ' ') { // Verifica se a posição está ocupada
+        } else if (jogoDaVelha[position - 1] != ' ') {
             printf("Posicao ja ocupada. Escolha outra.\n");
             goto jogador_x;
         }
     } else {
         printf("Somente numeros\n");
-        while (getchar() != '\n'); // Limpa o buffer
+        while (getchar() != '\n');
         goto jogador_x;
     }
 
@@ -110,13 +102,13 @@ int main() {
         if (position > 9 || position <= 0) {
             printf("Somente valores 1 a 9\n");
             goto jogador_o;
-        } else if (jogoDaVelha[position - 1] != ' ') { // Verifica se a posição está ocupada
+        } else if (jogoDaVelha[position - 1] != ' ') {
             printf("Posicao ja ocupada. Escolha outra.\n");
             goto jogador_o;
         }
     } else {
         printf("Somente numeros\n");
-        while (getchar() != '\n'); // Limpa o buffer
+        while (getchar() != '\n');
         goto jogador_o;
     }
 

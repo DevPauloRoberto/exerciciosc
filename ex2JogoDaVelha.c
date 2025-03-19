@@ -109,5 +109,7 @@ int main() {
         return 0;
     }
 
+    //fim jogada o
+
     goto inicio_jogo;
 }

@@ -7,15 +7,10 @@ int resultado;
 
 void jogadax(){
    for (int i = 0; i < 9; i++) {
-        if (position == (i + 1)) {
-            if(jogoDaVelha[i] == ' '){
-                jogoDaVelha[i] = 'x';
-                break;
-            }
-            else{
-                printf("Posicao ja foi jogada, escolha outra\n");
-            }
-        }
+    if (position == (i + 1)) {
+        jogoDaVelha[i] = 'x';
+        break;
+    }
     } 
 }
 

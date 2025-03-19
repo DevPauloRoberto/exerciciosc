@@ -43,8 +43,14 @@ int main(){
         }
 
         else if(operacao == '/'){
-            produto = (numero1 / numero2);
-            printf("%d", produto );
+            if(numero2 == 0){
+                printf("Impossivel dividir por zero, tente novamente com novos valores\n");
+                goto retorno1;
+            }
+            else{
+                produto = (numero1 / numero2);
+                printf("%d", produto );
+            }
         }
 
         else{

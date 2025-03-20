@@ -40,7 +40,7 @@ void empate(){
         jogoDaVelha[3] != ' ' && jogoDaVelha[4] != ' ' && jogoDaVelha[5] != ' ' &&
         jogoDaVelha[6] != ' ' && jogoDaVelha[7] != ' ' && jogoDaVelha[8] != ' ') {
         printf("Empate\n");
-        return 0;
+        win = 2;
     }
 }
 

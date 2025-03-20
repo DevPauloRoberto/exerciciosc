@@ -2,7 +2,7 @@
 
 char jogoDaVelha[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 int position;
-int win = 1;
+int endGame = 0;
 int resultado;
 
 void ganhoux(){
@@ -16,7 +16,7 @@ void ganhoux(){
     ){
         printf(" %c|%c|%c\n-------\n %c|%c|%c\n-------\n %c|%c|%c\n\n", jogoDaVelha[0], jogoDaVelha[1], jogoDaVelha[2], jogoDaVelha[3], jogoDaVelha[4], jogoDaVelha[5], jogoDaVelha[6], jogoDaVelha[7], jogoDaVelha[8]);
         printf("X ganhou\n");
-        win = 2;
+        endGame = 1;
     }
 }
 
@@ -31,7 +31,7 @@ void ganhouo(){
     ){
         printf(" %c|%c|%c\n-------\n %c|%c|%c\n-------\n %c|%c|%c\n\n", jogoDaVelha[0], jogoDaVelha[1], jogoDaVelha[2], jogoDaVelha[3], jogoDaVelha[4], jogoDaVelha[5], jogoDaVelha[6], jogoDaVelha[7], jogoDaVelha[8]);
         printf("O ganhou\n");
-        win = 2;
+        endGame = 1;
     }
 }
 
@@ -40,7 +40,7 @@ void empate(){
         jogoDaVelha[3] != ' ' && jogoDaVelha[4] != ' ' && jogoDaVelha[5] != ' ' &&
         jogoDaVelha[6] != ' ' && jogoDaVelha[7] != ' ' && jogoDaVelha[8] != ' ') {
         printf("Empate\n");
-        win = 2;
+        endGame = 1;
     }
 }
 
@@ -74,7 +74,7 @@ int main() {
     ganhoux();
     empate();
 
-    if (win == 2) {
+    if (endGame == 1) {
         return 0;
     }
 
@@ -105,7 +105,7 @@ int main() {
     ganhouo();
     empate();
 
-    if (win == 2) {
+    if (endGame == 1) {
         return 0;
     }
 

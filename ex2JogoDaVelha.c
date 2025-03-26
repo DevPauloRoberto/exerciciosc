@@ -39,7 +39,10 @@ void empate(){
     if (jogoDaVelha[0] != ' ' && jogoDaVelha[1] != ' ' && jogoDaVelha[2] != ' ' &&
         jogoDaVelha[3] != ' ' && jogoDaVelha[4] != ' ' && jogoDaVelha[5] != ' ' &&
         jogoDaVelha[6] != ' ' && jogoDaVelha[7] != ' ' && jogoDaVelha[8] != ' ') {
-        printf("Empate\n");
+        printf(" %c|%c|%c\n-------\n %c|%c|%c\n-------\n %c|%c|%c\n\n Empate", 
+           jogoDaVelha[0], jogoDaVelha[1], jogoDaVelha[2], 
+           jogoDaVelha[3], jogoDaVelha[4], jogoDaVelha[5], 
+           jogoDaVelha[6], jogoDaVelha[7], jogoDaVelha[8]);
         endGame = 1;
     }
 }

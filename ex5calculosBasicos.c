@@ -31,37 +31,36 @@ int main(){
     printf("Digite a operacao a ser feita: ");
     scanf(" %c", &operacao);
 
-    if(operacao == '+' || operacao == '-' || operacao == '/' || operacao == '*'){
-        if(operacao == '+'){
+   switch(operacao){
+        case '+' :
             produto = numero1 + numero2;
-            printf("%d", produto );
-        }
-
-        else if(operacao == '-'){
+            printf("%d", produto);
+            break;
+        
+        case '-' :
             produto = numero1 - numero2;
-            printf("%d", produto );
-        }
-
-        else if(operacao == '/'){
+            printf("%d", produto);
+            break;
+        
+        case '/' :
             if(numero2 == 0){
-                printf("Impossivel dividir por zero, tente novamente com novos valores\n");
-                goto retorno1;
+                printf("Impossivel dividir por zero\n");
+                goto retorno2;
             }
             else{
-                produto = (numero1 / numero2);
-                printf("%d", produto );
+                 produto = numero1 / numero2;
+                printf("%d", produto);
+                break;
             }
-        }
-
-        else{
+        
+        case '*' :
             produto = numero1 * numero2;
-            printf("%d", produto );
-        }
-    }
+            printf("%d", produto);
+            break;
 
-    else{
-        printf("somente os caracteres '+', '-', '/', '*' sao permitidos\n");
-        while(getchar() != '\n');
-        goto retorno3;
+        default :
+            printf("somente os caracteres '+', '-', '/', '*' sao permitidos\n");
+            while(getchar() != '\n');
+            goto retorno3;
     }
 }

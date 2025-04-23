@@ -98,7 +98,7 @@ int main(){
 
     switch(moeda){
         case 1:
-            printf("Valor em Dollar: %.2lf\n", (valor / 5.74));
+            printf("Valor em Dollar: %.2f\n", (valor / 5.74));
             break;
         
         case 2:

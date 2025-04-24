@@ -2,6 +2,8 @@
 
 double saldoConta;
 int resultado;
+int numeroSaques;
+int numeroDepositos;
 
 void mensagem(){
     printf("Digite o numero da operacao que deseja fazer:\n1.Saldo\n2.Deposito\n3.Sacar\n4.Sair\n");
@@ -16,6 +18,7 @@ void sacar(double *saldo){
         if(saque > 0){
             if(saque <= *saldo){
                 *saldo = *saldo - saque;
+                numeroSaques++;
             }
             else{
                 printf("Saldo insuficiente para realizar saque.\n");
@@ -41,6 +44,7 @@ void depositar(double *saldo){
     if(resultado == 1){
         if(valorDeposito > 0){
             *saldo = *saldo + valorDeposito;
+            numeroDepositos++;
         }
         else{
             printf("Somente valores positivos.\n");
@@ -69,15 +73,18 @@ int main (){
         saldo();
     }
 
-    else if(operacao == 3){
-        sacar(&saldoConta);
+    else if(operacao == 2){
+        depositar(&saldoConta);
+        
     }
 
-    else{
-        depositar(&saldoConta);
+    else if(operacao == 3){
+        sacar(&saldoConta);
     }
 
     if(operacao != 4){
         goto inicio;
     }
+
+    printf("Numero total de depositos realizados: %d\nNumero total de saques realizados: %d", numeroDepositos, numeroSaques);
 }
